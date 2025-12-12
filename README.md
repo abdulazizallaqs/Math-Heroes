@@ -16,7 +16,7 @@ A fun, interactive math learning application for kids! Practice addition, subtra
 
 | Home  | Subtraction | Addition |
 |:---:|:---:|:---:|
-| <img src="screenshots/home.png" width="200" /> | <img src="screenshots/sub.png" width="200" /> | <img src="screenshots/add.png" width="200" /> |
+| <img src="home.png" width="200" /> | <img src="sub.png" width="200" /> | <img src="add.png" width="200" /> |
 
 ## �🚀 Getting Started
 
