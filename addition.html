@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition - Math with Fun</title>
+    <link rel="icon" type="image/png" href="7917755.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button onclick="navigateTo('index.html')" class="btn btn-home">← Home</button>
+
+    <div class="glass-container" id="cont">
+        <div class="scoreboard">
+            <span>Score:</span>
+            <span id="score" class="score-value">0</span>
+        </div>
+        <h1 style="color: var(--secondary-color);">Addition Time!</h1>
+
+        <div id="question">Loading...</div>
+
+        <div id="message" class="feedback-msg"></div>
+
+        <div id="options" class="options-grid">
+            <!-- Options will be generated here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

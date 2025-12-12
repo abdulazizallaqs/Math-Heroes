@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers - Math with Fun</title>
+    <link rel="icon" type="image/png" href="7917755.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button onclick="navigateTo('index.html')" class="btn btn-home">← Home</button>
+
+    <div class="glass-container" id="cont">
+        <div class="scoreboard">
+            <span>Score:</span>
+            <span id="score" class="score-value">0</span>
+        </div>
+        <h1 style="color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Guess the Number!</h1>
+
+        <p>I'm thinking of a number between 1 and 5.</p>
+
+        <div style="margin: 20px 0;">
+            <input type="number" id="userGuess" class="number-input" placeholder="?" min="1" max="5">
+        </div>
+
+        <p id="para" class="feedback-msg">|</p>
+
+        <button onclick="checkNumberGuess()" class="btn btn-primary">Submit Guess</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Specific event listener for Enter key on this page
+        document.getElementById("userGuess").addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+                checkNumberGuess();
+            }
+        });
+    </script>
+</body>
+
+</html>

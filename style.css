@@ -1,0 +1,326 @@
+/* Modern Design System - Math with Fun */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #ffe66d;
+    --dark-text: #2d3436;
+    --light-text: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --success: #69db7c;
+    --error: #ff8787;
+    --bg-gradient-1: #a18cd1;
+    --bg-gradient-2: #fbc2eb;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Prevent scrolling on main view */
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Glassmorphism Container */
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    text-align: center;
+    max-width: 90%;
+    width: 600px;
+    margin: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    color: var(--dark-text);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ff6b6b, #4ecdc4, #ffe66d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.hero-title:hover {
+    transform: scale(1.1) rotate(-2deg);
+    text-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+}
+
+.hero-title::after {
+    content: 'Math Heroes';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.8) 50%, transparent 55%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.hero-title:hover::after {
+    opacity: 1;
+    animation: shine 1s linear infinite;
+}
+
+@keyframes shine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+p {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Juicy Buttons */
+.btn {
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-accent {
+    background-color: rgb(246, 179, 11);
+    color: var(--dark-text);
+}
+
+.btn-home {
+    background-color: var(--dark-text);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Floating Animation for decorative elements */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+/* Game Specific Styles */
+#question {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    color: var(--dark-text);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.option-btn {
+    background-color: var(--secondary-color);
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+.feedback-msg {
+    min-height: 1.5em;
+    /* Prevent layout jump */
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.correct {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wrong {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translated3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Custom numbers input */
+.number-input {
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color);
+    outline: none;
+    width: 150px;
+    text-align: center;
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--glass-bg);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+}
+
+.score-value {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+@keyframes scoreUpdate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+        color: var(--success);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.score-animate {
+    animation: scoreUpdate 0.5s ease-out;
+}
