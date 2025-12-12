@@ -12,6 +12,14 @@ A fun, interactive math learning application for kids! Practice addition, subtra
     -   Subtraction
     -   Guess the Number
 
+## � Screenshots
+
+| Home  | Subtraction | Addition |
+|:---:|:---:|:---:|
+| <img src="screenshots/home.png" width="200" /> | <img src="screenshots/sub.png" width="200" /> | <img src="screenshots/add.png" width="200" /> |
+
+## �🚀 Getting Started
+
 ## Getting Started
 
 ### Prerequisites
